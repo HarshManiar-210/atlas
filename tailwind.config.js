@@ -45,17 +45,18 @@ module.exports = {
         },
       },
       spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
+        18: '4.5rem',
+        88: '22rem',
       },
       gridTemplateColumns: {
-        'dashboard': 'repeat(auto-fit, minmax(300px, 1fr))',
+        dashboard: 'repeat(auto-fit, minmax(300px, 1fr))',
       },
     },
   },
   plugins: [
+    require('tailwindcss-animate'),
     // Add custom utilities for dashboard
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       addUtilities({
         '.dashboard-grid': {
           display: 'grid',
@@ -69,7 +70,8 @@ module.exports = {
           minHeight: '200px',
         },
         '.widget-shadow': {
-          boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+          boxShadow:
+            '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
         },
         '.cursor-pointer': {
           cursor: 'pointer',

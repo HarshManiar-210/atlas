@@ -1,11 +1,15 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   // Enable experimental features for better performance
   experimental: {
-    optimizePackageImports: ['recharts', 'react-grid-layout', 'socket.io-client'],
+    optimizePackageImports: [
+      'recharts',
+      'react-grid-layout',
+      'socket.io-client',
+    ],
   },
-  
+
   // Webpack configuration for better bundle optimization
   webpack: (config, { isServer }) => {
     // Handle canvas for chart rendering
@@ -17,16 +21,16 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
-  
+
   // Image optimization for dashboard exports
   images: {
     domains: ['localhost'],
     formats: ['image/webp', 'image/avif'],
   },
-  
+
   // Enable compression
   compress: true,
-  
+
   // Environment variables
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
